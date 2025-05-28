@@ -1,7 +1,7 @@
 # Finale Project Cloud Computing
 
 ## Todo:
-- [ ] Membuat Frontend
-- [ ] Membangun Backend
+- [x] Membuat Frontend
+- [x] Membangun Backend
 - [ ] Menyambungkan ke Aws
 - [ ] ..
