@@ -4,4 +4,4 @@
 - [ ] Membuat Frontend
 - [ ] Membangun Backend
 - [ ] Menyambungkan ke Aws
-- [ ]
+- [ ] ..
