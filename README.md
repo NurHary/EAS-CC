@@ -4,3 +4,4 @@
 </div>
 
 
+![Hasil](out/pic1.png)
