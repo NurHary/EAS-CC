@@ -17,9 +17,9 @@
 
 ## Hasil utama
 hasil dari running Aplikasi berikut adalah sebagai berikut:
-- Laman Utama
+### Laman Utama
 ![Hasil1](out/pic1.png)
-- Hasil ketika melakukan Searching pada kota Surabaya:
+### Hasil ketika melakukan Searching pada kota Surabaya:
 ![Hasil2](out/pic2.png)
-- Hasil running script python:
+### Hasil running script python:
 ![Hasil3](out/pic3.jpeg)
