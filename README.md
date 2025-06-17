@@ -24,7 +24,7 @@ disini kita juga menggunakan icon secara global dengan menggunakan google api ma
 ## Fase 2 Pembangunan RDS dan server EC2:
 setelah kita membuat akun AWS Educate, langkah berikutnya adalah untuk membuat server di EC2, hal tersebut dapat dilihat dari gambar di bawah berikut
 ![EC2-AWS](out/picfas1.jpeg)
-<pre></pre>
+<br />
 setelah kita membangun server di EC2, kemudian kita akan melakukan setup untuk membuat databases di Amazon RDS, hal tersebut dapat dilihat di gambar di bawah
 ![RDS-AWS](out/picfas2.jpeg)
 
@@ -32,10 +32,10 @@ setelah kita membangun server di EC2, kemudian kita akan melakukan setup untuk m
 kemudian setelah databases dan server telah berjalan, kita dapat melanjutkan pada pengetesan koneksi pada python disini kita menggunakan library flask sebagai library utama untuk melakukan koneksi pada databases tersebut. uji script tersebut dapat dilihat dari python script di bawah berikut
 ![pyscript](out/piccod2.png)
 
-<pre></pre>
+<br />
 output dari kodingan tersebut adalah kita tersambung dengan server tersebut
 ![Out3](out/pic3.jpeg)
-<pre></pre>
+<br />
 dan ketika kita menyambungkan pada server local tersebut, maka kita akan mendapatkan hasil web yang sebelumnya telah kita bangun
 ![Out1](out/pic1.png)
 
