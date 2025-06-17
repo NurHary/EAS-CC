@@ -14,3 +14,7 @@
 ## Hasil utama
 hasil dari running Aplikasi berikut adalah sebagai berikut
 ![Hasil](out/pic1.png)
+
+jajal
+
+raka keren
