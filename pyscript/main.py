@@ -14,6 +14,7 @@ API_KEY = os.getenv("OPENWEATHER_API_KEY")
 app = Flask(__name__)
 CORS(app)
 
+
 # Koneksi ke database RDS
 def get_db_connection():
     try:
@@ -21,17 +22,19 @@ def get_db_connection():
             host="weather-app-db.cd0ski4yk8q5.ap-southeast-2.rds.amazonaws.com",
             user="kelompok2",
             password="Walgondes0704",
-            database="app"
+            database="app",
         )
         return conn
     except Exception as e:
         print(f"❌ Gagal koneksi RDS: {e}")
         return None
 
+
 # Root endpoint
 @app.route("/")
 def home():
     return "✅ Weather API Flask is running!"
+
 
 # Endpoint cuaca
 @app.route("/api/weather", methods=["GET"])
@@ -47,7 +50,13 @@ def get_weather():
         data = response.json()
 
         if response.status_code != 200:
-            return jsonify({"error": data.get("message", "Gagal mengambil data dari OpenWeatherMap.")}), response.status_code
+            return jsonify(
+                {
+                    "error": data.get(
+                        "message", "Gagal mengambil data dari OpenWeatherMap."
+                    )
+                }
+            ), response.status_code
 
         result = {
             "city": data["name"],
@@ -57,7 +66,7 @@ def get_weather():
             "humidity": data["main"]["humidity"],
             "weather_description": data["weather"][0]["description"],
             "wind_speed": data["wind"]["speed"],
-            "icon_code": data["weather"][0]["icon"]
+            "icon_code": data["weather"][0]["icon"],
         }
 
         # ✅ Simpan ke RDS
@@ -71,12 +80,19 @@ def get_weather():
                         weather_description, wind_speed, icon_code
                     ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 """
-                cursor.execute(query, (
-                    result["city"], result["country"], result["temperature"],
-                    result["feels_like"], result["humidity"],
-                    result["weather_description"], result["wind_speed"],
-                    result["icon_code"]
-                ))
+                cursor.execute(
+                    query,
+                    (
+                        result["city"],
+                        result["country"],
+                        result["temperature"],
+                        result["feels_like"],
+                        result["humidity"],
+                        result["weather_description"],
+                        result["wind_speed"],
+                        result["icon_code"],
+                    ),
+                )
                 conn.commit()
                 cursor.close()
             except Exception as db_err:
@@ -93,11 +109,13 @@ def get_weather():
         daily_forecast = []
         for entry in forecast_data["list"]:
             if "12:00:00" in entry["dt_txt"] and entry["dt_txt"].split(" ")[0] != today:
-                daily_forecast.append({
-                    "date": entry["dt_txt"].split(" ")[0],
-                    "temp": round(entry["main"]["temp"]),
-                    "icon_code": entry["weather"][0]["icon"]
-                })
+                daily_forecast.append(
+                    {
+                        "date": entry["dt_txt"].split(" ")[0],
+                        "temp": round(entry["main"]["temp"]),
+                        "icon_code": entry["weather"][0]["icon"],
+                    }
+                )
                 if len(daily_forecast) == 4:
                     break
 
@@ -107,6 +125,7 @@ def get_weather():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 # Jalankan server
 if __name__ == "__main__":
