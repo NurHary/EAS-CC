@@ -34,18 +34,20 @@ kemudian setelah databases dan server telah berjalan, kita dapat melanjutkan pad
 
 <br />
 output dari kodingan tersebut adalah kita tersambung dengan server tersebut
+
 ![Out3](out/pic3.jpeg)
 <br />
 dan ketika kita menyambungkan pada server local tersebut, maka kita akan mendapatkan hasil web yang sebelumnya telah kita bangun
+
 ![Out1](out/pic1.png)
 
 ## Fase 4 Cloudwatch Monitoring:
 setelah aplikasi kita telah berjalan dengan sukses tentu kita dapat melakukan monitoring dengan menggunakan Amazon CloudWatch. hasil monitoring dari Cloudwatch dapat dilihat sebagai berikut
 
 #### untuk penggunaan secara keseluruhan
-![Out1](out/cwatch1.png)
+![Outcwatch](out/cwatch1.png)
 #### untuk penggunaan Cpu
-![Out1](out/cwatch1.png)
+![Outcwatch](out/cwatch1.png)
 
 ## Fase 5 Presentasi
 setelah itu kita melakukan presentasi secara daring dan juga melakukan dokumentasi
